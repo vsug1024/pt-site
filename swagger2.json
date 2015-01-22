@@ -14,7 +14,7 @@
         "/pets": {
             "post": {
                 "tags": [
-                    "pet"
+                    "pet1"
                 ],
                 "summary": "Add a new pet to the store",
                 "description": "",

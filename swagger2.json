@@ -31,9 +31,7 @@
                         "name": "cardId",
                         "description": "Идентификатор сотрудника (QR-код, mac-адрес, штриш-код и т.д.)",
                         "required": true,
-                        "schema": {
-                            "$ref": "#/definitions/Entrance"
-                        }
+						"type": "int"
                     }
                 ],
                 "responses": {
@@ -43,15 +41,7 @@
                     "200": {
                         "description": "Сотрудник найден"
                     }
-                },
-                "security": [
-                    {
-                        "petstore_auth": [
-                            "write_pets",
-                            "read_pets"
-                        ]
-                    }
-                ]
+                }
             },
             "put": {
                 "tags": [
@@ -720,6 +710,17 @@
         }
     },
     "definitions": {
+        "Entrance": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "format": "int64"
+                },
+                "name": {
+                    "type": "string"
+                }
+            }
+        },
         "User": {
             "properties": {
                 "id": {

@@ -760,7 +760,7 @@
                     "description": "Идентификационный код (QR-код, mac-адрес, штриш-код и т.д.)"
                 },
                 "dir": {
-                    "type": "string"
+                    "type": "string",
                     "format": "in|out"
                 }
             }

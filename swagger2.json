@@ -31,7 +31,9 @@
                         "name": "cardId",
                         "description": "Идентификатор сотрудника (QR-код, mac-адрес, штриш-код и т.д.)",
                         "required": true,
-						"type": "int"
+                        "schema": {
+                            "$ref": "int"
+                        }
                     }
                 ],
                 "responses": {

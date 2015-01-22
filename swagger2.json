@@ -44,6 +44,38 @@
                         "description": "Сотрудник найден"
                     }
                 }
+            }
+		},
+        "/passway/entrance?since={timeStamp}": {
+            "get": {
+                "tags": [
+                    "entrance"
+                ],
+                "summary": "Получение списка неподтвержденных прохождений сотрудников через вахту после заданного момента времени",
+                "description": "",
+                "operationId": "getEntrances",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+                    {
+                        "in": "in",
+                        "name": "timeStamp",
+                        "description": "Момент времени, после которого необходимо получить неподтвержденные прохождения сотрудников",
+                        "required": false,
+                        "schema": {
+                            "$ref": "long"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Операция выполнена успешно"
+                    }
+                }
             },
             "put": {
                 "tags": [

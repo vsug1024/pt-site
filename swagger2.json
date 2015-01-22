@@ -1,17 +1,9 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "This is a sample server Petstore server.  \n\n[Learn about Swagger](http://swagger.wordnik.com) or join the IRC channel `#swagger` on irc.freenode.net.  \n\nFor this sample, you can use the api key `special-key` to test the authorization filters\n",
+        "description": "REST API проекта ПТ-вахта",
         "version": "1.0.0",
-        "title": "Swagger Petstore",
-        "termsOfService": "http://helloreverb.com/terms/",
-        "contact": {
-            "name": "apiteam@wordnik.com"
-        },
-        "license": {
-            "name": "Apache 2.0",
-            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
-        }
+        "title": "ПТ-вахта"
     },
     "host": "petstore.swagger.wordnik.com",
     "basePath": "/v2",

@@ -5,8 +5,8 @@
         "version": "1.0.0",
         "title": "ПТ-вахта"
     },
-    "host": "petstore.swagger.wordnik.com",
-    "basePath": "/v2",
+    "host": "127.0.0.1:8080",
+    "basePath": "/pt-api/rest",
     "schemes": [
         "http"
     ],

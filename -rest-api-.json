@@ -96,6 +96,7 @@
             "properties": {
                 "cardId": {
                     "type": "integer",
+                    "required": true,
                     "description": "Идентификационный код (QR-код, mac-адрес, штриш-код и т.д.)"
                 },
                 "dir": {

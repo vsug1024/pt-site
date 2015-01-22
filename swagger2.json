@@ -1,7 +1,7 @@
 {
     "swagger": "2.0",
     "info": {
-        "description": "REST API проекта ПТ-вахта",
+        "description": "REST API проекта ПТ-вахта. Точка входа: <b>pt-api/rest</b>. Указанные ниже пути необходимо добавить к пути точки входа.",
         "version": "1.0.0",
         "title": "ПТ-вахта"
     },
@@ -11,36 +11,37 @@
         "http"
     ],
     "paths": {
-        "/pets": {
+        "/passway/entrance": {
             "post": {
                 "tags": [
-                    "pet1", "abc"
+                    "entrance"
                 ],
-                "summary": "Add a new pet to the store",
+                "summary": "Добавление неподтвержденных данных о прохождении сотрудника через вахту",
                 "description": "",
-                "operationId": "addPet",
+                "operationId": "addEntrance",
                 "consumes": [
-                    "application/json",
-                    "application/xml"
+                    "application/json"
                 ],
                 "produces": [
-                    "application/json",
-                    "application/xml"
+                    "application/json"
                 ],
                 "parameters": [
                     {
-                        "in": "body",
-                        "name": "body",
-                        "description": "Pet object that needs to be added to the store",
-                        "required": false,
+                        "in": "in",
+                        "name": "cardId",
+                        "description": "Идентификатор сотрудника (QR-код, mac-адрес, штриш-код и т.д.)",
+                        "required": true,
                         "schema": {
-                            "$ref": "#/definitions/Pet"
+                            "$ref": "#/definitions/Entrance"
                         }
                     }
                 ],
                 "responses": {
-                    "405": {
-                        "description": "Invalid input"
+                    "40x": {
+                        "description": "Сотрудник не найден"
+                    },
+                    "200": {
+                        "description": "Сотрудник найден"
                     }
                 },
                 "security": [

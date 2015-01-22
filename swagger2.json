@@ -82,7 +82,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Операция выполнена успешно"
+                        "description": "Операция выполнена успешно",
                         "schema": {
                             "$ref": "#/definitions/Entrance"
                         }

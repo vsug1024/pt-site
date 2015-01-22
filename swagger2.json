@@ -84,7 +84,7 @@
                     "200": {
                         "description": "Операция выполнена успешно",
                         "schema": {
-                            "$ref": "#/definitions/Entrance"
+                            "$ref": "#/definitions/Passes"
                         }
 					}
                 }
@@ -768,6 +768,17 @@
                 }
             }
         },
+        "Passes": {
+            "properties": {
+                "passes": {
+                    "type": "array",
+                    "description": "Проходы сотрудников через вахту",
+					"items": {
+                        "$ref": "#/definitions/Entrance"
+                    }
+                }
+			}
+		},
         "Entrance": {
             "properties": {
                 "id": {

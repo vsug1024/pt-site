@@ -19,11 +19,8 @@
                 "summary": "Получение аватара пользователя",
                 "description": "",
                 "operationId": "getUserAvatar",
-                "consumes": [
-                    "application/png"
-                ],
                 "produces": [
-                    "application/png"
+                    "image/png"
                 ],
                 "parameters": [
                     {
@@ -90,6 +87,35 @@
                 }
             }
 		},
+        "/passway/absent": {
+            "get": {
+                "tags": [
+                    "entrance"
+                ],
+                "summary": "Получение информации об отсутствующих сотрудниках",
+                "description": "",
+                "operationId": "getAbsent",
+                "produces": [
+                    "application/json"
+                ],
+                "parameters": [
+					{
+                        "in": "out",
+                        "name": "body",
+                        "description": "Информация о отсутствующих сотрудниках",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Absents"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Операция выполнена успешно"
+                    }
+                }
+            }
+		},
         "/passway/entrance?since={timeStamp}": {
             "get": {
                 "tags": [
@@ -98,9 +124,6 @@
                 "summary": "Получение списка неподтвержденных прохождений сотрудников через вахту после заданного момента времени",
                 "description": "",
                 "operationId": "getEntrances",
-                "consumes": [
-                    "application/json"
-                ],
                 "produces": [
                     "application/json"
                 ],
@@ -134,7 +157,7 @@
                     "required": true,
                     "description": "Идентификационный код (QR-код, mac-адрес, штриш-код и т.д.)"
                 },
-                "dir": {
+                "direction": {
                     "type": "string",
                     "format": "in|out"
                 }
@@ -195,7 +218,7 @@
                     "type": "int",
                     "description": "Время отсутствия в минутах"
                 },
-                "dir": {
+                "direction": {
                     "type": "string",
                     "format": "in|out",
                     "description": "Направление прохождения через вахту"
@@ -206,6 +229,50 @@
                     "items": {
                         "$ref": "#/definitions/UserMessage"
                     }
+                }
+            }
+        },
+        "Absents": {
+            "properties": {
+                "absents": {
+                    "type": "array",
+                    "description": "Отсутствия сотрудников",
+					"items": {
+                        "$ref": "#/definitions/Absent"
+                    }
+                }
+			}
+		},
+        "Absent": {
+            "properties": {
+                "userId": {
+                    "type": "integer",
+                    "description": "Идентификатор сотрудника"
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "Имя сотрудника"
+                },
+                "middleName": {
+                    "type": "string",
+                    "description": "Отчество сотрудника"
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "Фамилия сотрудника"
+                },
+                "passTime": {
+                    "type": "long",
+                    "description": "Время прохождения через вахту"
+                },
+                "absentType": {
+                    "type": "string",
+                    "format": "work|personal",
+                    "description": "Тип отсутствия"
+                },
+                "absentTimeMin": {
+                    "type": "int",
+                    "description": "Время отсутствия в минутах"
                 }
             }
         },

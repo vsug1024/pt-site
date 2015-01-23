@@ -29,7 +29,7 @@
                         "description": "Идентификатор сотрудника",
                         "required": true,
                         "schema": {
-                            "$ref": "integer"
+                            "$ref": "integer"							
                         }
                     }
                 ],

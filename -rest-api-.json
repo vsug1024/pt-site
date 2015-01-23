@@ -233,14 +233,10 @@
             }
         },
         "Absents": {
-            "properties": {
-                "absents": {
-                    "type": "array",
-                    "description": "Отсутствия сотрудников",
-					"items": {
-                        "$ref": "#/definitions/Absent"
-                    }
-                }
+			"type": "array",
+			"description": "Отсутствия сотрудников",
+			"items": {
+				"$ref": "#/definitions/Absent"
 			}
 		},
         "Absent": {

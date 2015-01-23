@@ -46,7 +46,7 @@
         "/passway/entrance": {
             "post": {
                 "tags": [
-                    "entrance"
+                    "passway"
                 ],
                 "summary": "Добавление неподтвержденных данных о прохождении сотрудника через вахту",
                 "description": "",
@@ -90,7 +90,7 @@
         "/passway/absent": {
             "get": {
                 "tags": [
-                    "absent"
+                    "passway"
                 ],
                 "summary": "Получение информации об отсутствующих сотрудниках",
                 "description": "",
@@ -111,7 +111,7 @@
         "/passway/entrance?since={timeStamp}": {
             "get": {
                 "tags": [
-                    "entrance"
+                    "passway"
                 ],
                 "summary": "Получение списка неподтвержденных прохождений сотрудников через вахту после заданного момента времени",
                 "description": "",

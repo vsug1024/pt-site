@@ -90,7 +90,7 @@
         "/passway/absent": {
             "get": {
                 "tags": [
-                    "entrance"
+                    "absent"
                 ],
                 "summary": "Получение информации об отсутствующих сотрудниках",
                 "description": "",

@@ -98,20 +98,12 @@
                 "produces": [
                     "application/json"
                 ],
-                "parameters": [
-					{
-                        "in": "out",
-                        "name": "body",
-                        "description": "Информация о отсутствующих сотрудниках",
-                        "required": true,
+                "responses": {
+                    "200": {
+                        "description": "Операция выполнена успешно",
                         "schema": {
                             "$ref": "#/definitions/Absents"
                         }
-                    }
-                ],
-                "responses": {
-                    "200": {
-                        "description": "Операция выполнена успешно"
                     }
                 }
             }

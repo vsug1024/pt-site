@@ -169,11 +169,48 @@
                     "type": "array",
                     "description": "Проходы сотрудников через вахту",
 					"items": {
-                        "$ref": "#/definitions/Entrance"
+                        "$ref": "#/definitions/EntrancePass"
                     }
                 }
 			}
 		},
+        "EntrancePass": {
+            "properties": {
+                "id": {
+                    "type": "integer",
+                    "description": "Идентификатор записи"
+                },
+                "cardId": {
+                    "type": "integer",
+                    "description": "Идентификационный код (QR-код, mac-адрес, штриш-код и т.д.)"
+                },
+                "userId": {
+                    "type": "integer",
+                    "description": "Идентификатор сотрудника"
+                },
+                "firstName": {
+                    "type": "string",
+                    "description": "Имя сотрудника"
+                },
+                "middleName": {
+                    "type": "string",
+                    "description": "Отчество сотрудника"
+                },
+                "lastName": {
+                    "type": "string",
+                    "description": "Фамилия сотрудника"
+                },
+                "passTime": {
+                    "type": "long",
+                    "description": "Время прохождения через вахту"
+                },
+                "direction": {
+                    "type": "string",
+                    "format": "in|out",
+                    "description": "Направление прохождения через вахту"
+                }
+            }
+        },
         "Entrance": {
             "properties": {
                 "id": {
@@ -233,10 +270,14 @@
             }
         },
         "Absents": {
-			"type": "array",
-			"description": "Отсутствия сотрудников",
-			"items": {
-				"$ref": "#/definitions/Absent"
+            "properties": {
+                "absents": {
+                    "type": "array",
+                    "description": "Отсутствия сотрудников",
+					"items": {
+                        "$ref": "#/definitions/Absent"
+                    }
+                }
 			}
 		},
         "Absent": {
